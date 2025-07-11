@@ -1,45 +1,13 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const jwt = require('jsonwebtoken');
-// const dotenv = require('dotenv');
+const jwt = require("jsonwebtoken");
+const { userRouter } = require("./routes/user.route");
+const { courseRouter } = require("./routes/course.route")
+
 
 app.use(express.json());
-
-app.get('/user',function(req,res){
-    res.json({
-        msg : "User Data"
-    })
-});
-
-app.post('/user/signup',function(req,res){
-    res.json({
-        msg : "You Signed up successfully"
-    })
-});
-
-app.post('/user/signin',function(req,res){
-    res.json({
-        msg : "You signed in. successfully"
-    })
-});
-
-app.get('/user/purchases',function(req,res){
-    res.json({
-        msg : "Purchase course fetched"
-    })
-})
-
-app.get('/courses',function(req,res){
-    res.json({
-        msg : "All Courses fetched"
-    })
-})
-
-app.get('/course/purchase',function(req,res){
-    res.json({
-        msg : "Purchase New Course"
-    })
-})
+app.use('/user',userRouter);
+app.use('/course',courseRouter)
 
 app.listen(3000,fucntion(){
     console.log("Server is running on 3000")

@@ -26,7 +26,7 @@ const userSchema = Schema({
 
 });
 
-const courseSchema = Schema({
+const courseSchema = new Schema({
     title : String ,
     description : String ,
     price : Number ,
@@ -34,7 +34,7 @@ const courseSchema = Schema({
     adminId : ObjectId
 });
 
-const adminSchema = Schema({
+const adminSchema = new Schema({
     firstName : String ,
     lastName : String ,
     email : String ,
@@ -42,7 +42,7 @@ const adminSchema = Schema({
 
 });
 
-const purchaseSchema = Schema({
+const purchaseSchema = new Schema({
     courseId : ObjectId ,
     userId : ObjectId
 });

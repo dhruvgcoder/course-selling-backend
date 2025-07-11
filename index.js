@@ -3,6 +3,7 @@ const app = express();
 const jwt = require("jsonwebtoken");
 const { userRouter } = require("./routes/user.route");
 const { courseRouter } = require("./routes/course.route")
+const { adminRouter } = require("./routes/admin.route")
 
 
 app.use(express.json());

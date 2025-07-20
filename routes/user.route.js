@@ -30,10 +30,7 @@ const parseDataWithSuccess = requiredFields.safeParse(req.body);
         })
         return;
     }
-// check duplicate user (409) - pending .....
-// CHECK FOR DUPLICATE USER 
-
-
+ 
 const { email , password , firstName , lastName } = req.body
 
 const duplicateUser = await userModel.findOne({email})
